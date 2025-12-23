@@ -1,0 +1,71 @@
+
+{
+    "layer": "top",
+    "height": 20,
+    "modules-left": ["custom/arch", "temperature", "cpu"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["battery", "pulseaudio", "clock", "custom/power"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "blueman-manager",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "hyprland/language": {
+        "format": "{short}", // Default format using the short name (e.g., "us")
+        "format-us": "US",         // Custom display for "us" layout
+        "format-ru": "RU",         // Custom display for "ru" layout
+        "keyboard-name": "at-translated-set-2-keyboard", // Crucial for multi-keyboard setups
+        "on-click": "hyprctl switchxkblayout current next" // Allows clicking the module to switch layout
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}% ",
+        "max-length": 10
+    },
+    "custom/arch": {
+        "format": "󰣇",
+        "on-click": "sh ~/.config/waybar/ff.sh"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "sh ~/coding/powmen.sh"
+    },
+    "hyprland/workspaces": {
+        "format-window-separator": "",
+        "persistent-workspaces": {
+                "*": 5, // 5 workspaces by default on every monitor
+        }
+    }
+}

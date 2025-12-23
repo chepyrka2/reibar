@@ -1,0 +1,12 @@
+@define-color bg0 rgb(43, 48, 59);
+@define-color bg1 rgb(61, 68, 82);
+@define-color bg2 rgb(70, 77, 93);
+@define-color bg3 rgb(79, 86, 105);
+@define-color accent rgb(140, 217, 227);
+@define-color accent1 rgb(48, 190, 237);
+@define-color red rgb(208, 0, 0);
+@define-color orange rgb(255, 109, 0);
+@define-color green rgb(55, 255, 139);
+@define-color yellow rgb(255, 215, 0);
+@define-color text0 rgb(255, 255, 255);
+@define-color text1 rgb(0, 0, 0);

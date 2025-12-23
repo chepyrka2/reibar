@@ -1,0 +1,124 @@
+@import 'scheme.css';
+* {
+    border: none;
+    border-radius: 0;
+    font-family: SpaceMono Nerd Font, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    text-shadow: none;
+    margin-top: 2px;
+}
+
+window#waybar {
+    /* background: @bg0; */
+    background: rgba(0, 0, 0, 0);
+    color: @text0;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+
+#workspaces button {
+  color: @accent;
+  border-radius: 10px;
+  margin: 0px 1px;
+  background: @accent;
+  transition: all 0.2s ease-out;
+  min-width: 20px;
+  min-height: 0;
+}
+#workspaces button.active {
+  background: @accent1;
+  color: @accent1;
+  transition: all 0.1s ease-out;
+  min-width: 40px;
+}
+#workspaces button:hover {
+  border: none;
+  background-color: @accent1;
+  color: @accent1;
+}
+
+#custom-arch{
+  min-width: 33px;
+  padding-right: 3px;
+  border-radius: 24px;
+  color: @accent1;
+  margin: 2px 3px 0 3px;
+  background-color: @bg0;
+}
+
+#temperature, #cpu, #battery, #pulseaudio, #clock, #power, #custom-power {
+  padding: 0 8px;
+  background-color: @bg0;
+}
+
+#temperature {
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
+  padding-left: 12px;
+}
+
+#cpu {
+  border-bottom-right-radius: 14px;
+  border-top-right-radius: 14px;
+  padding-right: 15px;
+}
+
+#workspaces {
+  background-color: @bg0;
+  padding: 2px 2px;
+  border-radius: 12px;
+}
+
+#battery {
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
+  padding-left: 15px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#custom-power {
+  margin-right: 2px;
+  padding-right: 15px;
+  border-bottom-right-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+#clock {
+    background-color: @bg0;
+}
+
+#battery {
+    color: @text0;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+@keyframes blink {
+    to {
+        background-color: @text1;
+        color: @text0;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
